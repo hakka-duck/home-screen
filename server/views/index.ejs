@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+  <meta charset="UTF-8">
+  <title>
+    <%= title %>
+  </title>
+  <link href="/js/index.esm.js">
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/icons/index.css" />
+</head>
+
+<style>
+  html {
+    height: 100%;
+  }
+
+  body {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }
+
+  a {
+    text-decoration: none;
+  }
+</style>
+
+<body class="container">
+  <div class="text-center mt-4">
+    <h1>
+      <%= title %>
+    </h1>
+  </div>
+  <div id="main">
+    <div id="home-screen" class="row gx-8 gy-4">
+      <% for (var i=0; i < Homescreens.length; i+=1) { %>
+        <div class="col-2 text-center">
+          <div class="shadow py-2">
+            <a href="<%= Homescreens[i].url %>" target="<%= Homescreens[i].target %>">
+              <!-- icon -->
+              <span class="material-icons" style="font-size: 80px;">face</span>
+              <br />
+              <strong>
+                <%= Homescreens[i].title %>
+              </strong>
+            </a>
+          </div>
+        </div>
+        <% } %>
+    </div>
+  </div>
+</body>
+
+</html>
